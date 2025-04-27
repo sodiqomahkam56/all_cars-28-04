@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content%}
+<h2>Create cars</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="brand">Brand</label><br>
+    <input type="text" name="model" id="brand"><br>
+        <label for="model">Model</label><br>
+    <input type="text" name="model" id="model"><br>
+    <label for="year">Year</label><br>
+    <input type="date" name="year" id="year"><br>
+    <label for="color">Color</label><br>
+    <input type="text" name="color" id="color"><br>
+    <label for="price">Price</label><br>
+    <input type="text" name="price" id="price"><br><br>
+    <button type="submit">Create</button>
+</form>
+{% endblock %}

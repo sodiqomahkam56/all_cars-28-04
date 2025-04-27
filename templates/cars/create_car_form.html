@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Create Car</h1>
+<button type="reset"><a href="{% url 'cars-list' %}">List</a></button>
+<hr>
+<form method="POST">
+     {% csrf_token %}
+    {{ form.as_p }}
+        <button type="submit">Create</button>
+</form>
+{% endblock %}
