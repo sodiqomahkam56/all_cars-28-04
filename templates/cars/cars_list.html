@@ -11,6 +11,7 @@
       <th>Model</th>
       <th>Year</th>
       <th>Color</th>
+      <th>Image</th>
       <th>Price</th>
         <th>Details</th>
     </tr>
@@ -23,6 +24,11 @@
       <td>{{ car.model }}</td>
       <td>{{ car.year }}</td>
       <td>{{ car.color }}</td>
+      {% if car.image %}
+      <td><img src="{{ car.image.url }}" width="100px" height="100px" alt="Rasm"></td>
+      {% else %}
+      <td>Rasm yoq</td>
+      {% endif %}
       <td>{{ car.price }}</td>
         <td>
         <a href="{% url 'car-detail' car.id %}" class="btn btn-primary btn-sm">Details</a>  <!-- ✅ Button -->

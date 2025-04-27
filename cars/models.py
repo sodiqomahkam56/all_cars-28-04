@@ -5,6 +5,7 @@ class Car(models.Model):
     model = models.CharField(max_length=50)  # Masalan: Camry, X5
     year = models.PositiveIntegerField()     # Masalan: 2022
     color = models.CharField(max_length=30)  # Masalan: white, black
+    image= models.ImageField(upload_to='images',blank=True,null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)  # Masalan: 25000.00
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -78,7 +78,13 @@ def car_update(request, id):
         form=CarForm(instance=car)
     return render(request,'cars/create_car_form.html',{'form':form})
 
-
+def delete_car(request, id):
+    car=Car.objects.get(id=id)
+    if request.method=='POST':
+        car.delete()
+        return redirect('cars-list')
+    else:
+        return render(request,'cars/delete_car.html',{'car':car})
 
 
 

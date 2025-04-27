@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+     {% csrf_token %}
+    <p> Rostdan ham {{car.brand}} {{car.model}} ni ochirmoqchimisiz?</p>
+    <button type="submit">xa</button>
+    <a href="{% url 'car-detail' car.id %}" class="btn btn-primary">yoq</a>
+</form>
+{% endblock %}

@@ -9,6 +9,7 @@
     <p class="card-text"><strong>Price:</strong> ${{ car.price }}</p>
     <p class="card-text"><small class="text-muted">Created at: {{ car.created_at }}</small></p>
     <a href="{% url 'car-update' car.id %}" class="btn btn-light">Update</a>
+    <a href="{% url 'delete-car' car.id %}" class="btn btn-light">Delete</a>
     <a href="{% url 'cars-list' %}" class="btn btn-light">Listga qaytish</a>
   </div>
 </div>
