@@ -44,18 +44,17 @@ def get_cars(request):
     }
     return render(request, 'cars/cars_list.html', context)
 
-
 def create_car_form(request):
     if request.method == 'POST':
-        form=CarForm(request.POST)
+        form = CarForm(request.POST,request.FILES,)  # ⚡ request.FILES qo'shish
         if form.is_valid():
             form.save()
             return redirect('cars-list')
-        else:
-            return render(request, 'cars/create_car_form.html',{'form':form})
     else:
-        form=CarForm(request.POST)
-    return render(request, 'cars/create_car_form.html',{'form':form})
+        form = CarForm()
+    return render(request, 'cars/create_car_form.html', {'form': form})
+
+
 
 def car_detail(request, id):
     car = get_object_or_404(Car, id=id)
@@ -68,7 +67,7 @@ def car_detail(request, id):
 def car_update(request, id):
     car=Car.objects.get(id=id)
     if request.method=='POST':
-        form=CarForm(request.POST,instance=car)
+        form=CarForm(request.POST,request.FILES,instance=car)
         if form.is_valid():
             form.save()
             return redirect('cars-list')

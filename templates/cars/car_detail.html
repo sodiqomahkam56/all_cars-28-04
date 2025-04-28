@@ -7,6 +7,12 @@
     <h5 class="card-title">{{ car.brand }} {{ car.model }} ({{ car.year }})</h5>
     <p class="card-text"><strong>Color:</strong> {{ car.color }}</p>
     <p class="card-text"><strong>Price:</strong> ${{ car.price }}</p>
+    {% if car.image %}
+    <img src="{{ car.image.url }}" width="100px" height="100px" alt="Car Image">
+    {% else %}
+    <p>No image available.</p>
+    {% endif %}
+
     <p class="card-text"><small class="text-muted">Created at: {{ car.created_at }}</small></p>
     <a href="{% url 'car-update' car.id %}" class="btn btn-light">Update</a>
     <a href="{% url 'delete-car' car.id %}" class="btn btn-light">Delete</a>
@@ -14,3 +20,4 @@
   </div>
 </div>
 {% endblock %}
+

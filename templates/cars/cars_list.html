@@ -25,10 +25,10 @@
       <td>{{ car.year }}</td>
       <td>{{ car.color }}</td>
       {% if car.image %}
-      <td><img src="{{ car.image.url }}" width="100px" height="100px" alt="Rasm"></td>
-      {% else %}
-      <td>Rasm yoq</td>
-      {% endif %}
+  <td><img src="{{ car.image.url }}" width="100px" height="100px" alt="Car Image"></td>
+{% else %}
+  <td>No Image</td>
+{% endif %}
       <td>{{ car.price }}</td>
         <td>
         <a href="{% url 'car-detail' car.id %}" class="btn btn-primary btn-sm">Details</a>  <!-- ✅ Button -->

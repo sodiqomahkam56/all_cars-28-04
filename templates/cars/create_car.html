@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% block content%}
 <h2>Create cars</h2>
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="brand">Brand</label><br>
     <input type="text" name="model" id="brand"><br>

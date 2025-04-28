@@ -3,7 +3,7 @@
 <h1>Create Car</h1>
 <button type="reset"><a href="{% url 'cars-list' %}">List</a></button>
 <hr>
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
      {% csrf_token %}
     {{ form.as_p }}
         <button type="submit">Create</button>
